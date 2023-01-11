@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entity.Concrete;
+using Entity.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Business.Services
         IResult UpdateUser(User user);
         IDataResult<List<User>> GetListUser();
         IDataResult<User> GetUser(int id);
+        LoginDTO Login(LoginDTO user);
     }
 }
 

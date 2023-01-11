@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity.DTO;
+using Business.AutoMapper;
+using AutoMapper;
 
 namespace Business.Managers
 {
@@ -16,6 +19,16 @@ namespace Business.Managers
     public class UserManager : IUserService
     {
         private readonly IUserDAL userDAL = new EFUserRepository();
+        private readonly IMapper _mapper;
+
+        public UserManager(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
+        public UserManager()
+        {
+        }
 
         public IResult AddUser(User user)
         {
@@ -42,6 +55,15 @@ namespace Business.Managers
         public IDataResult<User> GetUser(int id)
         {
             return new SuccessDataResult<User>(userDAL.GetByID(id));
+        }
+
+       
+
+        public LoginDTO Login(LoginDTO user)
+        {
+            var value = userDAL.LoginDAL(user);
+            var result = _mapper.Map<LoginDTO>(value);
+            return result;
         }
     }
 }
