@@ -18,7 +18,7 @@ Proje üzerinde iki adet yetki bulunmaktadır. Bunlar ;
         </ul>
 
 
-<h3>Used Technologies</h3> 
+<h3>Kullanılan Teknolojiler</h3> 
 <ul>
     <li>.Net Core 5</li>
     <li>Entity Framework ORM</li>
@@ -32,7 +32,7 @@ Proje üzerinde iki adet yetki bulunmaktadır. Bunlar ;
 </p>
 
 
-<h3 style="color : red ">INSTALL and  RUN</h3>
+<h3 style="color : red ">Yükleme ve Çalıştırma</h3>
 
 ```bash
     git clone https://github.com/headofsoftware/BLogAPI.git
